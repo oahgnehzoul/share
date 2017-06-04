@@ -1,0 +1,21 @@
+//
+//  PrefixHeader.pch
+//  shareDemo
+//
+//  Created by oahgnehzoul on 2017/6/5.
+//  Copyright © 2017年 oahgnehzoul. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef DEBUG
+#define SDLog(fmt, ...) NSLog((@"<%s : %d> %s  " fmt), [[[NSString stringWithUTF8String:__FILE__] lastPathComponent]   UTF8String], __LINE__, __PRETTY_FUNCTION__,  ##__VA_ARGS__);
+#else
+#define SDLog(...)
+#endif
+
+#endif /* PrefixHeader_pch */
