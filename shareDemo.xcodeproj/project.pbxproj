@@ -293,6 +293,7 @@
 				DEVELOPMENT_TEAM = 94W382AB54;
 				GCC_PREFIX_HEADER = shareDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = shareDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = l.z.h.shareDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -308,6 +309,7 @@
 				DEVELOPMENT_TEAM = 94W382AB54;
 				GCC_PREFIX_HEADER = shareDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = shareDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = l.z.h.shareDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
