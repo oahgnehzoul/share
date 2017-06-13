@@ -16,7 +16,7 @@
 
 + (NSDictionary *)logDic {
     return @{
-             @"customKey":@"customValue"
+             @"customKey":@"自定义返回值"
              };
 }
 

@@ -19,7 +19,10 @@
 }
 
 + (void)LogDic:(NSDictionary *)dic {
-    NSLog(@"%@",dic);
+//    NSLog(@"%@",dic);
+    NSData *dicData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *jsonStr = [[NSString alloc] initWithData:dicData encoding:NSUTF8StringEncoding];
+    SDLog(@"%@",jsonStr);
 }
 
 + (NSInteger)testNum {

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CustomClass.h"
+
 #ifdef DEBUG
 #define SNSLog(format,...) NSLog(format, ##__VA_ARGS__)
 #else
@@ -19,7 +20,8 @@ typedef NS_ENUM(NSInteger,SDButtonTag) {
     SDButtonTagTwo,     //打印一些宏
     SDButtonTagThree,   //call
     SDButtonTagFour,    //打印 NSDictionary
-    SDButtonTagFive
+    SDButtonTagFive,    //
+    SDButtonTagSix      //globalBreakpoint
 };
 
 @interface ViewController ()
@@ -38,16 +40,8 @@ typedef NS_ENUM(NSInteger,SDButtonTag) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //1.全局奔溃断点
-//    NSArray *tests = @[@1,@2,@3];
-//    tests[4];
-
     NSInteger conditionNum = 1;
     NSString *testStr = @"testConditionBreakPoint";
-    
-    
-    
-    
     
     //2.条件断点
     
@@ -86,6 +80,9 @@ typedef NS_ENUM(NSInteger,SDButtonTag) {
         case SDButtonTagFour:
             [self printNSDictionary];
             break;
+        case SDButtonTagFive:
+            [self globalBreakpoint];
+            break;
         default:
             break;
     }
@@ -106,7 +103,14 @@ typedef NS_ENUM(NSInteger,SDButtonTag) {
 
 //
 - (void)call {
+    //yellow
+    //gray
+    //purple
     
+    //break at '%B' @[self printMacro]@
+    //po [self printMacro]
+    //pjson [CustomClass logDic]
+    //po [CustomClass logDic]
 }
 
 - (void)printNSDictionary {
@@ -122,6 +126,20 @@ typedef NS_ENUM(NSInteger,SDButtonTag) {
     NSData *dicData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
     NSString *jsonStr = [[NSString alloc] initWithData:dicData encoding:NSUTF8StringEncoding];
     SDLog(@"转换后%@",jsonStr);
+    //pjson dic
+    //
+    //call (void)[NSObject LogDic:dic]
+ 
+    //expr (void)[NSObject LogDic:dic]
+    //error: no known method '+LogDic:'; cast the message send to the method's return type
+
+    //break at '%B' @(void)[NSObject LogDic:dic]@
+}
+
+- (void)globalBreakpoint {
+    //.全局奔溃断点
+    NSArray *tests = @[@1,@2,@3];
+    tests[4];
 }
 
 @end

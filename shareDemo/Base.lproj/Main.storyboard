@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MMM-h6-eEC">
-                                <rect key="frame" x="36" y="40" width="125" height="120"/>
+                                <rect key="frame" x="36" y="40" width="125" height="150"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqe-Iz-wrI">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
@@ -50,6 +50,13 @@
                                         <state key="normal" title="call"/>
                                         <connections>
                                             <action selector="btnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NJR-0I-Hnn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ph3-T8-PcM">
+                                        <rect key="frame" x="0.0" y="120" width="125" height="30"/>
+                                        <state key="normal" title="globalBreakpoint"/>
+                                        <connections>
+                                            <action selector="btnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JJv-LX-xa8"/>
                                         </connections>
                                     </button>
                                 </subviews>
